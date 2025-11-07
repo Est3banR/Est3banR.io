@@ -6,7 +6,7 @@ import Header from "../components/Header.astro";
 <!DOCTYPE html>
 <html
 >
-  <Header title="Esteban Ramirez" />
+  <Header title="ML Explorer" />
   <body>
     <div class="content" style="display: flex;">
   <!-- Left column: Professional profile, styles preserved -->
@@ -38,44 +38,44 @@ import Header from "../components/Header.astro";
         </p>
       </aside>
   <!-- Right column: Main landing -->
-    <nav class="main" style="flex: 1; padding: 2rem; max-width: calc(100% - 420px); min-width: 0;">
+      <nav class="main" style="flex: 1; padding: 2rem;">
         <div class="container">
           <main class="fold-content-container">
             <div class="fold-content">
-              <h1>Hi there! I'm Esteban</h1>
-              <p class="lead">
-                🔎 Passionate about uncovering insights from data and turning complexity into clarity. I enjoy transforming raw data into meaningful decisions and forecasts.🚀
-              </p>
-              <h2 style="margin: 2rem 0 0.5rem 0; font-size: 2rem; color: #fff; text-align: left; white-space: nowrap;">Projects</h2>
+              <div style="position: relative;">
+                <a href="/" style="position: absolute; left: -8rem; top: 25px; display: inline-flex; align-items: center; color: #fff; text-decoration: none; font-size: 1.5rem; transition: opacity 0.2s;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" style="margin-right:8px;" viewBox="0 0 24 24">
+                    <path d="M15.5 5l-7 7 7 7"/>
+                  </svg>
+                  Back
+                </a>
+                <h1 style="margin: 0;">ML Explorer</h1>
+              </div>
             </div>
-            <!-- New 2-column grid -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-              <!-- Cell 1 -->
-              <a href="/mlops-workflow" style="text-decoration: none; transition: transform 0.2s ease;">
-                <div style="background: url('./assets/mlops-project.jpg') center/cover; border-radius: 8px; box-shadow: 0 2px 8px #eee; height: 250px; position: relative; cursor: pointer;">
-                  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); padding: 0.5rem; border-radius: 0 0 8px 8px;">
-                    <div class="chips-container chips-container-small-width" style="font-size: 14px;">
-                      <div class="single-chip small-chip">AWS</div>
-                      <div class="single-chip small-chip">Python</div>
-                      <div class="single-chip small-chip">S3</div>
-                      <div class="single-chip small-chip">Docker</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <!-- Cell 2 -->
-              <a href="/ml-explorer" style="text-decoration: none; transition: transform 0.2s ease;">
-                <div style="background: url('./assets/ml-explorer-project.jpg') center/cover; border-radius: 8px; box-shadow: 0 2px 8px #eee; height: 250px; position: relative; cursor: pointer;">
-                  <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); padding: 0.5rem; border-radius: 0 0 8px 8px;">
-                    <div class="chips-container chips-container-small-width" style="font-size: 14px;">
-                      <div class="single-chip small-chip">Jupyter</div>
-                      <div class="single-chip small-chip">Python</div>
-                      <div class="single-chip small-chip">ML</div>
-                      <div class="single-chip small-chip">EDA</div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+            <!-- Single project cell -->
+            <div style="background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #eee; overflow: hidden; margin-top: 2rem; height: 270px; display: flex; flex-direction: column;">
+              <div style="flex: 1 1 auto; position: relative; overflow: hidden;">
+                <img src="./assets/ml-explorer-project.jpg" alt="ML Explorer" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block;" />
+              </div>
+              <div class="chips-container chips-container-small-width" style="padding: 0.5rem 0.6rem;">
+                <div class="single-chip small-chip">Jupyter</div>
+                <div class="single-chip small-chip">Python</div>
+                <div class="single-chip small-chip">ML</div>
+                <div class="single-chip small-chip">EDA</div>
+              </div>
+            </div>
+
+            <!-- Project description -->
+            <div style="margin-top: 2rem; color: #fff; font-size: 16px; line-height: 26px;">
+              Esta herramienta de ML Explorer facilita la exploración y análisis de datos para proyectos de machine learning. Incluye notebooks interactivos, visualizaciones y técnicas de EDA para entender patrones y preparar datos de manera eficiente.
+            </div>
+
+            <!-- Project URL -->
+            <div style="margin-top: 1rem;">
+              <span style="font-size: 0.95rem; color: #fff;">URL del proyecto:</span>
+              <div style="margin-top: 0.5rem;">
+                <a href="https://github.com/Est3banR/project-ml-explorer" target="_blank" rel="noopener noreferrer" style="color: #0077cc; font-size: 1rem; word-break: break-all;">https://github.com/Est3banR/project-ml-explorer</a>
+              </div>
             </div>
           </main>
         </div>

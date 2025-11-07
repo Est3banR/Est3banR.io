@@ -398,6 +398,50 @@ p {
   display: flex;
 }
 
+/* Profile sidebar layout: longitudinal alignment with left-aligned text */
+.profile-sidebar {
+  width: 370px;
+  min-width: 370px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keep content aligned to left */
+  padding: 2.5rem 2rem 2.5rem 3rem;
+  margin-right: 3rem;
+}
+.profile-sidebar .profile-avatar {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid #fff;
+  display: block;
+}
+.profile-sidebar .profile-name {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  white-space: nowrap;
+  text-align: left;
+}
+.profile-sidebar .profile-role {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+.profile-sidebar .contact-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.profile-sidebar .profile-description {
+  font-size: 1rem;
+  color: #ccc;
+  text-align: left;
+  width: 260px;
+}
+
+
 .chips-container.chips-container-small-width {
   max-width: 380px;
 }
