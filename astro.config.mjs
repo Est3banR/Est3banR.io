@@ -6,7 +6,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://Est3banR.io",
+  site: "https://Est3banR.io", // Cambia a la URL de tu GitHub Pages si usas por ejemplo https://usuario.github.io/repositorio
   integrations: [tailwind(), react()],
   vite: {
     resolve: {
@@ -16,12 +16,8 @@ export default defineConfig({
       },
     },
   },
-  output: "static",
+  output: "static", // Genera solo archivo estático para GitHub Pages
   build: {
     inlineStylesheets: "auto",
-  },
-  server: {
-    host: true,
-    port: 4321,
   },
 });
