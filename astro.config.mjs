@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 
 import react from "@astrojs/react";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://Est3banR.io",
   integrations: [tailwind(), react()],
@@ -16,7 +15,7 @@ export default defineConfig({
       },
     },
   },
-  output: "static", // Genera solo archivo estático para GitHub Pages
+  output: "static",
   build: {
     inlineStylesheets: "auto",
   },
