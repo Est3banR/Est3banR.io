@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
 export default defineConfig({
-  site: "https://github.com/Est3banR/Est3banR.io",
+  site: "https://est3banr.github.io/Est3banR.io",
   integrations: [tailwind(), react()],
   vite: {
     resolve: {
