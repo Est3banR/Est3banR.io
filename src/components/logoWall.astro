@@ -1,20 +1,23 @@
 ---
 const technologies = [
-  "astro",
-  "vue",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "next",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "javaScript",
+  "python",
+  "r",
+  "AWS",
+  "docker",
   "git",
-  "supabase",
   "mysql",
-  "bash",
+  "powerBI",
 ];
+
+const techIcons = {
+  python: "https://img.icons8.com/color/48/python--v1.png",
+  r: "https://img.icons8.com/fluency/48/rstudio.png",
+  AWS: "https://img.icons8.com/color/48/amazon-web-services.png",
+  docker: "https://img.icons8.com/fluency/48/docker.png",
+  git: "/svg/git.svg",
+  mysql: "/svg/mysql.svg",
+  powerBI: "https://img.icons8.com/fluency/48/power-bi-2021.png",
+};
 ---
 
 <div class="relative overflow-x-hidden py-8">
@@ -32,7 +35,7 @@ const technologies = [
       [...technologies, ...technologies, ...technologies].map((tech) => (
         <div class="flex items-center gap-2 group transition-all duration-300">
           <img
-            src={`/svg/${tech}.svg`}
+            src={techIcons[tech]}
             alt={tech}
             class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
             width="30"
