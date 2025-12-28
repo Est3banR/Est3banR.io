@@ -1,4 +1,6 @@
 ---
+const base = import.meta.env.BASE_URL;
+
 const technologies = [
   "python",
   "r",
@@ -14,8 +16,8 @@ const techIcons = {
   r: "https://img.icons8.com/fluency/48/rstudio.png",
   AWS: "https://img.icons8.com/color/48/amazon-web-services.png",
   docker: "https://img.icons8.com/fluency/48/docker.png",
-  git: "/svg/git.svg",
-  mysql: "/svg/mysql.svg",
+  git: `${base}/svg/git.svg`,
+  mysql: `${base}/svg/mysql.svg`,
   powerBI: "https://img.icons8.com/fluency/48/power-bi-2021.png",
 };
 ---
