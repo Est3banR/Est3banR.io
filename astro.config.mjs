@@ -4,8 +4,10 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
 export default defineConfig({
-  site: "https://est3banr.github.io/Est3banR.io",
+  site: "https://est3banr.github.io",
+  base: "/Est3banR.io/",
   integrations: [tailwind(), react()],
+  output: "static",
   vite: {
     resolve: {
       alias: {
@@ -13,9 +15,5 @@ export default defineConfig({
         "@components": "/src/components",
       },
     },
-  },
-  output: "static",
-  build: {
-    inlineStylesheets: "auto",
   },
 });
