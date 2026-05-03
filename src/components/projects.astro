@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import projectMLOps from "../../public/mlops.png";
 import mlExplorer from "../../public/ml-explorer.png";
+import HeartDiseasePrediction from "../../public/streamlit-prediction-result.png";
 
 interface Project {
   title: string;
@@ -21,11 +22,18 @@ const projects: Project[] = [
     description: "Interactive machine learning exploration tool for performing exploratory data analysis (EDA) and training supervised and unsupervised models. Built using an object-oriented design, it supports multiple classification, regression, and clustering algorithms, with model serialization for reuse and experimentation.",
   },
   {
+    title: "Heart Disease Prediction Pipeline",
+    image: HeartDiseasePrediction as ImageMetadata,
+    link: "https://github.com/Est3banR/Heart-Disease-Prediction-Pipeline",
+    status: "Contributor",
+    description: "End-to-end ML solution for heart disease prediction using clinical variables, combining ETL, data preprocessing, and an MLPClassifier model with joblib serialization, evaluated with precision-recall focus to minimize false negatives in a clinical context, and deployed via a Streamlit interface, achieving 0.85 AUC-ROC and 0.77 accuracy on a Kaggle dataset.",
+  },
+  {
     title: "MLOps Project",
     image: projectMLOps as ImageMetadata,
     link: "https://github.com/Est3banR/proyecto_mlops",
     status: "Contributor",
-    description: "End-to-end MLOps solution for phishing email detection using a Random Forest model, featuring automated retraining, DVC-based data and model versioning, FastAPI inference, Docker deployment, and CI/CD pipelines with GitHub Actions in a cloud environment (AWS)",
+    description: "End-to-end MLOps solution for phishing email detection using a Random Forest model, featuring automated retraining, DVC-based data and model versioning, FastAPI inference, Docker deployment, and CI/CD pipelines with GitHub Actions in a cloud environment (AWS).",
   },
 ];
 ---
