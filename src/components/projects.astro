@@ -3,15 +3,18 @@ import { Image } from "astro:assets";
 import projectMLOps from "../../public/mlops.png";
 import mlExplorer from "../../public/ml-explorer.png";
 import HeartDiseasePrediction from "../../public/streamlit-prediction-result.png";
+import loansPolarsPandas from "../../public/loans-polars-pandas-comparative.png";
 
 const base = import.meta.env.BASE_URL;
 
 interface Project {
   title: string;
   image?: ImageMetadata;
+  imageUrl?: string;
   video?: string;
   link: string;
   preview?: string;
+  platform?: "github" | "kaggle";
   status: string;
   description: string;
 }
@@ -25,11 +28,13 @@ const projects: Project[] = [
   description: "End-to-end AI solution for automated diamond appraisal. Deep learning computer vision models trained on the Kabré HPC cluster predict gemstone characteristics from images, while OpenFacet pricing data estimates market value."
   },
   {
-    title: "ML Explorer",
-    image: mlExplorer as ImageMetadata,
-    link: "https://github.com/Est3banR/project-ml-explorer",
+    title: "Polars vs Pandas: Loan Dataset Benchmark",
+    image: loansPolarsPandas as ImageMetadata,
+    imageUrl: `${base}svg/kaggle-icon.svg`,
+    link: "https://www.kaggle.com/code/estebitan/loans-polars-vs-pandas-comparative",
+    platform: "kaggle",
     status: "Completed",
-    description: "Interactive machine learning exploration tool for performing exploratory data analysis (EDA) and training supervised and unsupervised models. Built using an object-oriented design, it supports multiple classification, regression, and clustering algorithms, with model serialization for reuse and experimentation.",
+    description: "Performance benchmark comparing Polars and Pandas for large-scale data processing. A parallel ETL pipeline cleans and engineers features on a 150K-row loan default dataset, measuring speedup across filtering, imputation, and joins, with a bonus classifier predicting loan defaults.",
   },
   {
     title: "Heart Disease Prediction Pipeline",
@@ -37,6 +42,13 @@ const projects: Project[] = [
     link: "https://github.com/Est3banR/Heart-Disease-Prediction-Pipeline",
     status: "Contributor",
     description: "End-to-end ML solution for heart disease prediction using clinical variables, combining ETL, data preprocessing, and an MLPClassifier model with joblib serialization, evaluated with precision-recall focus to minimize false negatives in a clinical context, and deployed via a Streamlit interface, achieving 0.85 AUC-ROC and 0.77 accuracy on a Kaggle dataset.",
+  },
+  {
+    title: "ML Explorer",
+    image: mlExplorer as ImageMetadata,
+    link: "https://github.com/Est3banR/project-ml-explorer",
+    status: "Completed",
+    description: "Interactive machine learning exploration tool for performing exploratory data analysis (EDA) and training supervised and unsupervised models. Built using an object-oriented design, it supports multiple classification, regression, and clustering algorithms, with model serialization for reuse and experimentation.",
   },
   {
     title: "MLOps Project",
@@ -77,12 +89,16 @@ const projects: Project[] = [
                     aria-label={project.title}
                     class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                ) : (
+                ) : project.image ? (
                   <Image
-                    src={project.image!}
+                    src={project.image}
                     alt={project.title}
                     class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+                ) : (
+                  <div class="w-full h-48 md:h-72 flex items-center justify-center bg-[#ffffff08] group-hover:scale-105 transition-transform duration-300">
+                    <img src={project.imageUrl} alt="" class="size-24 object-contain" />
+                  </div>
                 )}
                 <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity duration-300 flex items-center justify-start px-8 py-8 pointer-events-none">
                   <p class="text-white text-left max-w-md leading-relaxed">{project.description}</p>
@@ -99,17 +115,21 @@ const projects: Project[] = [
                   <a
                     target="_blank"
                     href={project.link}
-                    aria-label="GitHub"
+                    aria-label={project.platform === "kaggle" ? "Kaggle" : "GitHub"}
                     class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      class="size-7"
-                    >
-                      <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
-                    </svg>
+                    {project.platform === "kaggle" ? (
+                      <img src={project.imageUrl} alt="" class="size-7 object-contain" />
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-7"
+                      >
+                        <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                      </svg>
+                    )}
                   </a>
                   {project.preview && (
                     <a
